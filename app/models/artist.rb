@@ -40,7 +40,10 @@ class Artist
   end
 
   def self.most_prolific
-    
+    self.all.max do |artist|
+      artist.paintings.length / artist.years_experience
+      #iterate through the Artist class. Get the artist paintings, get how many we have and divide it by the artist year of experience.
+    end
   end
 
   def create_painting(title, price, gallery)
@@ -52,8 +55,6 @@ end # end of class
 
 ##### TO DO #####
 
-#   * `Artist.most_prolific`
-#     * Returns an `instance` of the artist with the highest amount of paintings per year of experience.
 
 ##### DONE #####
 
@@ -69,5 +70,7 @@ end # end of class
 #     * Returns an `integer` that is the total years of experience of all artists
 #   * `Artist#create_painting`
 #     * Given the arguments of `title`, `price` and `gallery`, creates a new painting belonging to that artist
+#   * `Artist.most_prolific`
+#     * Returns an `instance` of the artist with the highest amount of paintings per year of experience.
 
 
